@@ -110,14 +110,14 @@ namespace ModPatcher
                   b = (byte)(b & 0xF);
                   b = (byte)(b | 0x30);
                   fs.Seek(-1L, SeekOrigin.Current);
-                  //fs.WriteByte(b);
+                  fs.WriteByte(b);
                   ++mod;
                }
                num++;
             }
             sw.Stop();
             tbLog.AppendText(sw.ElapsedMilliseconds + "ms\r\n");
-            tbLog.AppendText($"   MPEG header: fond: {num} / modified: {mod} .\r\n\r\n");
+            tbLog.AppendText($"   MPEG header: found: {num} / modified: {mod} .\r\n\r\n");
             return num;
          }
       }
